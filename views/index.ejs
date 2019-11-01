@@ -1,11 +1,48 @@
 <!DOCTYPE html>
+
 <html>
+
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
+
   <body>
+
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <hr>
+
+    <!-- post가 존재하는 경우 for문을 통해 리스트 출력 -->
+    <table>
+
+      <!-- table header -->
+      <tr>
+        <td width="300"><b>title</b></td>
+        <td width="50"><b>wirter</b></td>
+        <td><b>date</b></td>
+      </tr>
+
+      <!-- make post list -->
+      <% for(var i=0; i<posts.length; i++) { %>
+
+        <tr onmouseover="this.style.background='#bad7df'"
+            onmouseout="this.style.background='white'">
+          <td width="300" >
+            <a href='/post/<%= posts[i]._id %>'><%= posts[i].title %></a>
+          </td>
+          <td><%= posts[i].writer %></td>
+          <td><%= posts[i].created %></td>
+        </tr>
+
+      <% } %>
+
+    </table>
+
+    <% if(posts.length==0) { %>
+      <p>아직 작성된 글이 없습니다.</p>
+    <% } %>
+    
+    <br><br>
+    <button onclick="location.href='/edit'">write</button>
   </body>
 </html>

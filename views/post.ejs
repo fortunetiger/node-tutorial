@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= post.title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= post.title %></h1>
+
+      <hr>
+
+        <table>
+            <tr><td width=100><b>writer</b></td> <td> <%= post.writer %></td></tr>
+            <tr><td width=100><b>created at</b></td> <td> <%= post.created %></td></tr>
+            <tr><td width=100><b>updated at</b></td> <td> <%= post.updated %></td></tr>
+        </table>
+        <br>
+        <p><%= post.contents %></p>
+
+
+      <br><br>
+        <button onclick="location.href='/'">back</button>
+
+  </body>
+</html>

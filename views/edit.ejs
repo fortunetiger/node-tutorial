@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+
+    <form action="/edit/write" method="post">
+      <table>
+        <tr>
+          <td width="100"><b>title</b></td>
+          <td><input type="text" name="title" id="title"></td>
+        </tr>
+        <tr>
+          <td width="100" style="vertical-align:top">
+            <b>writer</b>
+          </td>
+          <td>
+            <input type="text" name="writer" id="writer" value="migo">
+            <p style="font-size:x-small;color:lightseagreen">
+            *입력하지 않으면 기본값 'migo'
+            </p>
+          </td>
+        </tr>
+        <tr >
+          <td width="100" style="vertical-align:top">
+            <b>contents</b>
+          </td>
+          <td>
+            <textarea type="contents"
+            name="contents"
+            id="contents"
+            rows="20" cols="120"></textarea>
+          </td>
+        </tr>
+      </table>
+      <button onclick="location.href='/'">back</button>
+      <button type="submit">wirte</button>
+    </form>
+
+  </body>
+</html>
